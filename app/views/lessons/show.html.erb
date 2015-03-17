@@ -4,7 +4,9 @@
 </p>
 
 <p>
-  <%= link_to "home", lessons_path %>
+  <%= link_to "Previous Lesson", lesson_path(@lesson.next) %>
+  <%= link_to "Next Lesson", lesson_path(@lesson.next) %>
+
 </p>
 
 
@@ -14,4 +16,8 @@
   <%= link_to "delete", lesson_path(@lesson),
                         :data => { :confirm => "Are you sure???",
                                    :method => "delete"} %>
+</p>
+<p>
+  <%= link_to "home", lessons_path %>
+
 </p>
