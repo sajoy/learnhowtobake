@@ -6,3 +6,12 @@
 <p>
   <%= link_to "home", lessons_path %>
 </p>
+
+
+<p>
+  <%= link_to "edit", edit_lesson_path(@lesson) %>
+
+  <%= link_to "delete", lesson_path(@lesson),
+                        :data => { :confirm => "Are you sure???",
+                                   :method => "delete"} %>
+</p>

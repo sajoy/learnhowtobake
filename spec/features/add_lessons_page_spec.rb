@@ -12,9 +12,9 @@ describe "the add lessons process" do
 
   # describe "the view lessons process" do
   #   it "views a lesson" do
-  #     visit lessons_path
+  #     visit lessons_path(lesson)
   #     click_on 'A Lesson'
   #     expect(page). to have_content 'Lesson'
   #   end
-  # end # ASK ABOUT THIS!! 
+  # end
 end
