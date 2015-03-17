@@ -1,0 +1,15 @@
+<h1>Baking Lessons! Etc.</h1>
+
+<ul>
+  <% @sections.each do |section| %>
+    <li><%= section.name %> </li>
+      <% section.lessons.each do |lesson| %>
+      <ul>
+        <li><%= link_to lesson.name, section_lesson_path(section, lesson) %> </li>
+      </ul>
+      <% end %>
+    <%= link_to 'Add A Lesson', new_section_lesson_path(section) %>
+  <% end %>
+</ul>
+
+<%= link_to 'Add A Section', new_section_path %>

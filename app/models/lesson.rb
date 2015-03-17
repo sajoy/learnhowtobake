@@ -1,9 +1,12 @@
 class Lesson < ActiveRecord::Base
   validates :name, :presence => true
   validates :content, :presence => true
+  belongs_to :section
 
   def next
-    Lesson.all.each do |lesson|
+    section = Section.find(self.section_id)
+    lessons = section.lessons
+    lessons.each do |lesson|
       if lesson.number === self.number + 1
         return lesson
       end
@@ -11,7 +14,9 @@ class Lesson < ActiveRecord::Base
   end
 
   def previous
-    Lesson.all.each do |lesson|
+    section = Section.find(self.section_id)
+    lessons = section.lessons
+    lessons.each do |lesson|
       if lesson.number === self.number - 1
         return lesson
       end

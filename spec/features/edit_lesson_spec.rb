@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe "the edit a lesson process" do
   it "edits a lesson" do
-    lesson = Lesson.create(:name => 'Cheese', :content => 'lots of cheesey things')
-    visit lesson_path(lesson)
+    section = Section.create(:name => 'Cheese')
+    lesson = Lesson.create(:name => 'Cheese', :section_id => 1, :number => 1, :content => 'lots of cheesey things')
+    visit section_lesson_path(section, lesson)
     click_on 'edit'
     fill_in 'Name', :with => 'Cheese!!!'
     fill_in 'Content', :with => 'lots of cheesey things!!'

@@ -4,20 +4,20 @@
 </p>
 
 <p>
-  <%= link_to "Previous Lesson", lesson_path(@lesson.next) %>
-  <%= link_to "Next Lesson", lesson_path(@lesson.next) %>
+  <%= link_to "Previous Lesson", section_lesson_path(@section, @lesson.next) %>
+  <%= link_to "Next Lesson", section_lesson_path(@section, @lesson.next) %>
 
 </p>
 
 
 <p>
-  <%= link_to "edit", edit_lesson_path(@lesson) %>
+  <%= link_to "edit", edit_section_lesson_path(@section, @lesson) %>
 
-  <%= link_to "delete", lesson_path(@lesson),
+  <%= link_to "delete", section_lesson_path(@section, @lesson),
                         :data => { :confirm => "Are you sure???",
                                    :method => "delete"} %>
 </p>
 <p>
-  <%= link_to "home", lessons_path %>
+  <%= link_to "home", sections_path %>
 
 </p>
